@@ -1,0 +1,18 @@
+{
+  "name": "jsdk",
+  "version": "1.0.0",
+  "description": "jsdk test iframe",
+  "main": "JSDK.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "heroku"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Jason",
+  "license": "ISC"
+}
