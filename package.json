@@ -4,6 +4,7 @@
   "description": "jsdk test iframe",
   "main": "JSDK.js",
   "scripts": {
+    "start": "node JSDK.js",
     "test": "none"
   },
   "repository": {
