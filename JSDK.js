@@ -57,5 +57,4 @@ let JSDK = {};
         jsCalendar.new(myCalendar);
     }
     JSDK.calendarInit = calendarInit;
-    JSDK.loadFinish = loadFinish;
 }());
