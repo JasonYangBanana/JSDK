@@ -52,8 +52,8 @@ let JSDK = {};
     function calendarInit() {
         //導入月曆的css
         
-        loadFile('https: //jasonyangbanana.github.io/JSDK/css/dist/tui-calendar.css', 'css');
-        loadFile('https: //jasonyangbanana.github.io/JSDK/js/dist/tui-calendar.js', 'js');
+        loadFile('https://jasonyangbanana.github.io/JSDK/css/dist/tui-calendar.css', 'css');
+        loadFile('https://jasonyangbanana.github.io/JSDK/js/dist/tui-calendar.js', 'js');
         const myCalendar = document.querySelector('.my-calendar');
         const tuiCalendar = document.createElement('div');
         
