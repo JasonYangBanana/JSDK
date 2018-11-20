@@ -34,11 +34,13 @@ let JSDK = {};
     JSDK.tra = tra;
 
     //導入js ,css使用
-    function loadFile(path, type, callback) {
+    function loadFile(path, type) {
         if (type === 'js') {
             var filePath = document.createElement('script');
             filePath.type = 'text/javascript';
             filePath.src = path;
+            const myCalendar = document.querySelector('.my-calendar');
+            jsCalendar.new(myCalendar);
         } else if (type === 'css') {
             var filePath = document.createElement('link');
             filePath.rel = 'stylesheet';
@@ -47,17 +49,15 @@ let JSDK = {};
         }
         const head = document.querySelectorAll('head')[0];
         head.appendChild(filePath);
-        if (callback == null) return;
-        callback();
     }
-    function newCalendar() {
-        const myCalendar = document.querySelector('.my-calendar');
-        jsCalendar.new(myCalendar);
-    }
+    // function newCalendar() {
+        
+    // }
     function calendarInit() {
         //導入月曆的css
         loadFile('https://jasonyangbanana.github.io/JSDK/css/dist/jsCalendar.css', 'css');
-        loadFile('https://jasonyangbanana.github.io/JSDK/js/dist/jsCalendar.js', 'js', newCalendar);
+        loadFile('https://jasonyangbanana.github.io/JSDK/js/dist/jsCalendar.js', 'js');
+        
     }
     JSDK.calendarInit = calendarInit;
 }());
