@@ -32,17 +32,33 @@ let JSDK = {};
         body.appendChild(iframe);
     }
     JSDK.tra = tra;
-    function calendarInit() {
-        //月曆的css
-        const link = document.createElement('link');
-        link.rel = "stylesheet";
-        
 
+    //導入js ,css使用
+    function loadFile(path, type) {
+        if (type === 'js') {
+            var filePath = document.createElement('script');
+            filePath.type = 'text/javascript';
+            filePath.src = path;
+        } else if (type === 'css') {
+            var filePath = document.createElement('link');
+            filePath.rel = 'stylesheet';
+            filePath.type = 'text/css';
+            filePath.href = path;
+        }
+        const head = document.querySelectorAll('head')[0];
+        head.appendChild(filePath);
+    }
+
+    function calendarInit() {
+        //導入月曆的css
+        
+        loadFile('https: //jasonyangbanana.github.io/JSDK/css/dist/tui-calendar.css', 'css');
+        loadFile('https: //jasonyangbanana.github.io/JSDK/js/dist/tui-calendar.js', 'js');
         const myCalendar = document.querySelector('.my-calendar');
         const tuiCalendar = document.createElement('div');
-
-        console.log(myCalendar)
+        
 
     }
-    JSDK.calendarInit = calendarInit
+    JSDK.calendarInit = calendarInit;
+    
 }());
