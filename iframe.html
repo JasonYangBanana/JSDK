@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>THSR</title>
+</head>
+<body>
+<form id="formQuickTimeTableSearch" method="post" action="https://www.thsrc.com.tw/tw/TimeTable/SearchResult">
+    <input name="StartStation" value="977abb69-413a-4ccf-a109-0272c24fd490">
+    <input name="EndStation" value="9c5ac6ca-ec89-48f8-aab0-41b738cb1814">
+    <input id="DepartueSearchDate" name="DepartueSearchDate" value="2018/11/19">
+    <input id="DepartueSearchTime" name="DepartueSearchTime" value="05:00">
+</form>
+<script>
+    const form = document.querySelector('#formQuickTimeTableSearch');
+    const departueSearchDate = document.querySelector('#DepartueSearchDate');
+    const departueSearchTime = document.querySelector('#DepartueSearchTime');
+    const now = new Date();
+    const year = now.getFullYear();
+    let month = now.getMonth() + 1;
+    month = month > 10 ? `${month}`: `0${month}`;
+    let date = now.getDate();
+    date = date > 10 ? `${date}` : `0${date}`;
+    let hours = now.getHours();
+    hours = hours > 10 ? `${hours}`: `0${hours}`;
+    let minutes = now.getMinutes(); 
+    minutes = minutes > 30 ? '30' : '00';
+    departueSearchDate.value = `${year}/${month}/${date}`;
+    departueSearchTime.value = `${hours}:${minutes}`;
+    form.submit();
+</script>
+</body>
+</html>

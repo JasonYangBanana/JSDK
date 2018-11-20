@@ -7,17 +7,17 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="my-calendar">月曆預留區</div>
 <script>
     (function () {
-    var firstScript, script = document.createElement('script');
+        let firstScript, script = document.createElement('script');
         script.text = 'text／javascript';
         script.async = true;
-        script.src = '我們提供的sdk js';
-        // 讓我們的js 永遠在第一個被 loading
+        script.src = 'http://localhost:8888/JSDK.js';
+        // 讓我們的 js 永遠在第一個被 loading
         firstScript = document.getElementsByTagName('script')[0] //取得的第一個 <script>
         firstScript.parentNode.insertBefore(script, firstScript); //將我們引入的 <script> 置於第一個
     }());
 </script>
-    
 </body>
 </html>

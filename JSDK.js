@@ -11,31 +11,39 @@
 // }());
 
 let JSDK = {};
+// window.JSDK = JSDK;
 (function () {
+    let body = document.querySelector('body');
     function thsr() {
-        let body = document.querySelector('body');
         let iframe = document.createElement('iframe');
         iframe.src = 'http://www.thsrc.com.tw/tw/TimeTable/SearchResult';
+        iframe.width = '1200px';
+        iframe.height = '600px';
         iframe.id = "thsr";
+        body.appendChild(iframe);
     }
-    JSDK.thsr = thsr();
+    JSDK.thsr = thsr;
+    function tra() { 
+        let iframe = document.createElement('iframe');
+        iframe.src = 'http://twtraffic.tra.gov.tw/twrail/TW_QuickSearch.aspx';
+        iframe.width = '1200px';
+        iframe.height = '600px';
+        iframe.id = "tra";
+        body.appendChild(iframe);
+    }
+    JSDK.tra = tra;
+    function calendarInit() {
+        //月曆的css
+        const link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = 
+
+
+        const myCalendar = document.querySelector('.my-calendar');
+        const tuiCalendar = document.createElement('div');
+
+        console.log(myCalendar)
+
+    }
+
 }());
-
-console.log(JSDK)
-
-const http = require('http');
-const PORT = process.env.PORT || 5000;
-const hostname = '127.0.0.1';
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Access-Control-Allow-Origin', '*')
-    res.setHeader('Content-Type', 'text/json;charset=utf-8');
-    res.end("Hello World\n");
-});
-
-server.listen(PORT);
-// server.listen(port, hostname, () => {
-//     console.log(`Server running at http://${hostname}:${port}/`);
-// });

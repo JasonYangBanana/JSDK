@@ -17,6 +17,7 @@
   "author": "Jason",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "tui-calendar": "^1.8.0"
   }
 }
