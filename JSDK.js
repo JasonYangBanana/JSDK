@@ -39,8 +39,10 @@ let JSDK = {};
             var filePath = document.createElement('script');
             filePath.type = 'text/javascript';
             filePath.src = path;
-            const myCalendar = document.querySelector('.my-calendar');
-            jsCalendar.new(myCalendar);
+            setTimeout(() => {
+                const myCalendar = document.querySelector('.my-calendar');
+                jsCalendar.new(myCalendar);
+            }, 3000);
         } else if (type === 'css') {
             var filePath = document.createElement('link');
             filePath.rel = 'stylesheet';
