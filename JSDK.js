@@ -36,7 +36,6 @@ let JSDK = {};
         //月曆的css
         const link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = 
 
 
         const myCalendar = document.querySelector('.my-calendar');
