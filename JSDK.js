@@ -54,7 +54,9 @@ let JSDK = {};
         loadFile('https://jasonyangbanana.github.io/JSDK/css/dist/jsCalendar.css', 'css');
         loadFile('https://jasonyangbanana.github.io/JSDK/js/dist/jsCalendar.js', 'js');
         const myCalendar = document.querySelector('.my-calendar');
-        jsCalendar.new(myCalendar);
+        setTimeout(() => {
+            jsCalendar.new(myCalendar);
+        }, 3000);
     }
     JSDK.calendarInit = calendarInit;
 }());
