@@ -34,7 +34,7 @@ let JSDK = {};
     JSDK.tra = tra;
 
     //導入js ,css使用
-    function loadFile(path, type) {
+    function loadFile(path, type, callback) {
         if (type === 'js') {
             var filePath = document.createElement('script');
             filePath.type = 'text/javascript';
@@ -47,16 +47,17 @@ let JSDK = {};
         }
         const head = document.querySelectorAll('head')[0];
         head.appendChild(filePath);
+        if (callback == null) return;
+        callback();
     }
-
+    function newCalendar() {
+        const myCalendar = document.querySelector('.my-calendar');
+        jsCalendar.new(myCalendar);
+    }
     function calendarInit() {
         //導入月曆的css
         loadFile('https://jasonyangbanana.github.io/JSDK/css/dist/jsCalendar.css', 'css');
-        loadFile('https://jasonyangbanana.github.io/JSDK/js/dist/jsCalendar.js', 'js');
-        const myCalendar = document.querySelector('.my-calendar');
-        setTimeout(() => {
-            jsCalendar.new(myCalendar);
-        }, 3000);
+        loadFile('https://jasonyangbanana.github.io/JSDK/js/dist/jsCalendar.js', 'js', newCalendar);
     }
     JSDK.calendarInit = calendarInit;
 }());
